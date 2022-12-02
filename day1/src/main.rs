@@ -23,14 +23,17 @@ pub fn part_one(input: &str) -> Option<u32> {
 pub fn part_two(input: &str) -> Option<u32> {
     let mut res = input
         .split('\n')
-        .fold((BinaryHeap::<u32>::new(), 0 as u32), |(mut btree, y), x| {
-            if x.is_empty() {
-                btree.push(y);
-                return (btree, 0);
-            }
+        .fold(
+            (BinaryHeap::<u32>::new(), 0 as u32),
+            |(mut btree, acc), x| {
+                if x.is_empty() {
+                    btree.push(acc);
+                    return (btree, 0);
+                }
 
-            return (btree, y + x.parse::<u32>().unwrap());
-        })
+                return (btree, acc + x.parse::<u32>().unwrap());
+            },
+        )
         .0;
 
     Some(res.pop()? + res.pop()? + res.pop()?)
