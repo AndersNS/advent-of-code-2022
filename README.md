@@ -1,5 +1,5 @@
 
-# 🎄 Advent of Code 2022
+# 🎄 Advent of Code 2022 
 
 A simple template system for rust advent of code. 
 
