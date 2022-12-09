@@ -30,8 +30,8 @@ pub fn part_one(input: &str) -> Option<usize> {
 
 fn tuple_str_to_number((str1, str2): (&str, &str)) -> (u8, u8) {
     return (
-        str1.parse::<u8>().expect("{} is an invalid number"),
-        str2.parse().expect("{} is an invalid number"),
+        str1.parse().expect("invalid number"),
+        str2.parse().expect("invalid number"),
     );
 }
 
